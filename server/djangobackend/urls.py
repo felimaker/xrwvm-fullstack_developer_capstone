@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Conecta las URLs de djangoapp
     path('djangoapp/', include('djangoapp.urls')),
+    path('login/', TemplateView.as_view(template_name="index.html")),
+    path('register/', TemplateView.as_view(template_name="index.html")),
     # Opcional: Que la raíz también redirija a la app
     path('', include('djangoapp.urls')),
     path('', TemplateView.as_view(template_name='index.html')), 
