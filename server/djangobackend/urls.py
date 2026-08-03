@@ -16,16 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView 
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # Conecta las URLs de djangoapp
-    path('djangoapp/', include('djangoapp.urls')),
+    
+    # 1. Rutas visuales de React (¡Deben ir antes que el backend!)
     path('login/', TemplateView.as_view(template_name="index.html")),
     path('register/', TemplateView.as_view(template_name="index.html")),
-    # Opcional: Que la raíz también redirija a la app
-    path('', include('djangoapp.urls')),
-    path('', TemplateView.as_view(template_name='index.html')), 
+    
+    # 2. Rutas de tu API de Django
+    path('djangoapp/', include('djangoapp.urls')),
+    
+    # 3. Ruta principal de React (El Home)
+    path('', TemplateView.as_view(template_name="index.html")),
 ]
-
