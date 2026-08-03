@@ -1,4 +1,4 @@
-# Cars Dealership Application - Final Project
+# xrwvm-fullstack_developer_capstone - Final Project
 
 ## Project Overview
 This project is a full-stack web application developed for **Cars Dealership**, a national car retailer in the United States. The application allows users to browse nationwide dealership branches, filter by state, view reviews, register/login, and post feedback with automated sentiment analysis.
