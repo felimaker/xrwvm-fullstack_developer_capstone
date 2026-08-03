@@ -19,15 +19,22 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
+    # 1. Ruta de administración de Django
     path('admin/', admin.site.urls),
     
-    # 1. Rutas visuales de React (¡Deben ir antes que el backend!)
-    path('login/', TemplateView.as_view(template_name="index.html")),
-    path('register/', TemplateView.as_view(template_name="index.html")),
-    
-    # 2. Rutas de tu API de Django
+    # 2. Rutas de tu API de Django (Backend)
+    # Es vital que esto vaya antes que las vistas de React
     path('djangoapp/', include('djangoapp.urls')),
     
-    # 3. Ruta principal de React (El Home)
+    # 3. Rutas de React (Frontend)
+    # Todas estas le dicen a Django: "Déjale esta vista a React"
     path('', TemplateView.as_view(template_name="index.html")),
+    path('login/', TemplateView.as_view(template_name="index.html")),
+    path('login', TemplateView.as_view(template_name="index.html")),
+    path('register/', TemplateView.as_view(template_name="index.html")),
+    path('register', TemplateView.as_view(template_name="index.html")),
+    path('dealer/<int:dealer_id>/', TemplateView.as_view(template_name="index.html")),
+    path('dealer/<int:dealer_id>', TemplateView.as_view(template_name="index.html")),
+    path('postreview/<int:dealer_id>/', TemplateView.as_view(template_name="index.html")),
+    path('postreview/<int:dealer_id>', TemplateView.as_view(template_name="index.html")),
 ]
