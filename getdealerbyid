@@ -1,0 +1,3 @@
+curl -X GET http://127.0.0.1:8000/djangoapp/dealer/1
+
+{"status": 200, "dealer": {"id": 1, "city": "Dallas", "state": "Texas", "st": "TX", "address": "123 Auto Way", "zip": "75001", "lat": 32.7767, "long": -96.7970, "short_name": "Dallas Auto", "full_name": "Dallas Auto Dealership"}}
